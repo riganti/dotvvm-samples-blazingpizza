@@ -1,0 +1,60 @@
+﻿@viewModel BlazingPizza.App.ViewModels.GetPizzaViewModel, BlazingPizza.App
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent" Validation.Enabled="false">
+
+    <div class="main">
+        <dot:Repeater DataSource="{value: Specials}"
+                      WrapperTagName="ul"
+                      class="pizza-cards">
+
+            <li Events.Click="{command: _root.ShowConfigurePizzaDialog(_this)}"
+                style="{value: "background-image: url('" + ImageUrl + "')"}">
+                <div class="pizza-info">
+                    <span class="title">{{value: Name}}</span>
+                    {{value: Description}}
+                    <span class="price">{{value: FormattedBasePrice}}</span>
+                </div>
+            </li>
+        </dot:Repeater>
+    </div>
+
+    <div class="sidebar">
+        <div class="order-contents" Visible="{value: Order.Pizzas.Count > 0}">
+            <h2>Your order</h2>
+
+            <dot:Repeater DataSource="{value: Order.Pizzas}">
+                <div class="cart-item">
+                    <dot:LinkButton Text="x"
+                                    Click="{command: _root.RemovePizza(_this)}" 
+                                    class="delete-item" />
+                    <div class="title">{{value: Size}}" {{value: Special.Name}}</div>
+                    <dot:Repeater DataSource="{value: Toppings}" WrapperTagName="ul">
+                        <li>+ {{value: Topping.Name}}</li>
+                    </dot:Repeater>
+                    <div class="item-price">
+                        {{value: FormattedTotalPrice}}
+                    </div>
+                </div>
+            </dot:Repeater>
+        </div>
+        <div class="empty-cart" Visible="{value: Order.Pizzas.Count == 0}">
+            Choose a pizza<br />to get started
+        </div>
+
+        <div class="order-total"
+             class-hidden="{value: Order.Pizzas.Count == 0}">
+            Total:
+            <span class="total-price">{{value: Order.FormattedTotalPrice}}</span>
+            <dot:LinkButton class="btn btn-warning"
+                            Click="{command: Checkout()}"
+                            Enabled="{value: Order.Pizzas.Count > 0}">
+                Order >
+            </dot:LinkButton>
+        </div>
+    </div>
+
+    <cc:ConfigurePizzaDialog DataContext="{value: ConfiguringPizzaDialog}" />
+
+</dot:Content>
+

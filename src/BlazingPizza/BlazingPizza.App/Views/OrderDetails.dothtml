@@ -1,0 +1,43 @@
+﻿@viewModel BlazingPizza.App.ViewModels.OrderDetailsViewModel, BlazingPizza.App
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <div class="main">
+        <div Visible="{value: OrderWithStatus == null}">
+            <h2>Nope</h2>
+            <p>Sorry, this order could not be loaded.</p>
+        </div>
+
+        <div class="track-order" DataContext="{value: OrderWithStatus}">
+            <div class="track-order-title">
+                <h2>
+                    Order placed {{value: Order.CreatedTime.ToString("g")}}
+                </h2>
+                <p class="ml-auto mb-0">
+                    Status: <strong>{{value: StatusText}}</strong>
+                </p>
+            </div>
+            <div class="track-order-body">
+                <div class="track-order-details">
+                    <cc:OrderReview DataContext="{value: Order}" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <dot:Button style="display: none"
+                Validation.Enabled="false"
+                ID="RefreshButton" ClientIDMode="Static"
+                Click="{command: null}" />
+
+    <dot:InlineScript Dependencies="dotvvm">
+        dotvvm.events.init.subscribe(function () {
+            window.setInterval(function () {
+                document.getElementById("RefreshButton").click();
+            }, 4000);
+        });
+    </dot:InlineScript>
+
+</dot:Content>
+

@@ -1,0 +1,37 @@
+﻿@viewModel BlazingPizza.App.ViewModels.MasterPageViewModel, BlazingPizza.App
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>Blazing Pizza</title>
+</head>
+<body>
+
+    <div class="top-bar">
+        <img class="logo" src="~/img/logo.svg" />
+
+        <dot:RouteLink RouteName="GetPizza" 
+                       class="nav-tab" 
+                       class-active="{resource: Context.Route.RouteName == "GetPizza"}">
+            <img src="~/img/pizza-slice.svg" />
+            <div>Get Pizza</div>
+        </dot:RouteLink>
+
+        <dot:RouteLink RouteName="MyOrders"
+                       class="nav-tab" 
+                       class-active="{resource: Context.Route.RouteName == "MyOrders" || Context.Route.RouteName == "OrderDetails"}">
+            <img src="~/img/bike.svg" />
+            <div>My Orders</div>
+        </dot:RouteLink>
+    </div>
+
+    <div class="content" Visible="{value: _page.EvaluatingOnClient}">
+        <dot:ContentPlaceHolder ID="MainContent" />
+    </div>
+
+</body>
+</html>

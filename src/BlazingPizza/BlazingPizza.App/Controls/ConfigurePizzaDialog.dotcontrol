@@ -1,0 +1,64 @@
+﻿@viewModel BlazingPizza.App.ViewModels.ConfigurePizzaDialogViewModel, BlazingPizza.App
+
+<div class="dialog-container" DataContext="{value: ConfiguringPizza}">
+    <div class="dialog">
+        <div class="dialog-title">
+            <h2>{{value: Special.Name}}</h2>
+            {{value: Special.Description}}
+        </div>
+        <form class="dialog-body">
+            <div>
+                <label>Size:</label>
+                <dot:TextBox html:type="range"
+                             min="{{resource: BlazingPizza.Pizza.MinimumSize.ToString()}}"
+                             max="{{resource: BlazingPizza.Pizza.MaximumSize.ToString()}}"
+                             step="1"
+                             Text="{value: Size}"
+                             Changed="{command: null}" />
+                <span class="size-label">
+                    {{value: Size}}" (£{{value: FormattedTotalPrice}})
+                </span>
+            </div>
+            <div>
+                <label>Extra Toppings:</label>
+                <div Visible="{value: Toppings.Count >= 6}">
+                    (maximum reached)
+                </div>
+                <dot:ComboBox class="custom-select"
+                              Visible="{value: Toppings.Count < 6}"
+                              DataSource="{value: _root.Toppings}"
+                              ItemTextBinding="{value: Name + " - (£" + FormattedPrice + ")"}"
+                              EmptyItemText="(select)"
+                              SelectedValue="{value: _root.SelectedTopping}"
+                              SelectionChanged="{command: _root.AddTopping()}" />
+            </div>
+
+            <div class="toppings">
+                <dot:Repeater DataSource="{value: Toppings}">
+                    <div class="topping">
+                        {{value: Topping.Name}}
+                        <span class="topping-price">{{value: Topping.FormattedPrice}}</span>
+                        <dot:Button class="delete-topping"
+                                    Click="{command: _root.RemoveTopping(_this)}" 
+                                    Text="x"/>
+                    </div>
+                </dot:Repeater>
+            </div>
+        </form>
+
+        <div class="dialog-buttons">
+            <dot:Button class="btn btn-secondary mr-auto"
+                        Click="{command: _root.Cancel()}">
+                Cancel
+            </dot:Button>
+            <span class="mr-center">
+                Price: <span class="price">{{value: FormattedTotalPrice}}</span>
+            </span>
+            <dot:Button class="btn btn-success ml-auto"
+                        Click="{command: _root.Confirm()}">
+                Order >
+            </dot:Button>
+        </div>
+    </div>
+</div>
+

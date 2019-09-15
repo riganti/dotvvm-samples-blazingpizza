@@ -1,0 +1,73 @@
+﻿@viewModel BlazingPizza.Address, BlazingPizza.Shared
+
+<div class="form-field">
+    <label>Name:</label>
+    <div>
+        <dot:TextBox Text="{value: Name}" 
+                     Validator.Value="{value: Name}"
+                     Validator.InvalidCssClass="invalid" />
+        <dot:Validator Value="{value: Name}"
+                       ShowErrorMessageText="true"
+                       InvalidCssClass="validation-message" />
+    </div>
+</div>
+
+<div class="form-field">
+    <label>Line 1:</label>
+    <div>
+        <dot:TextBox Text="{value: Line1}" 
+                     Validator.Value="{value: Line1}"
+                     Validator.InvalidCssClass="invalid" />
+        <dot:Validator Value="{value: Line1}"
+                       ShowErrorMessageText="true"
+                       InvalidCssClass="validation-message" />
+    </div>
+</div>
+
+<div class="form-field">
+    <label>Line 2:</label>
+    <div>
+        <dot:TextBox Text="{value: Line2}" 
+                     Validator.Value="{value: Line2}"
+                     Validator.InvalidCssClass="invalid" />
+        <dot:Validator Value="{value: Line2}"
+                       ShowErrorMessageText="true"
+                       InvalidCssClass="validation-message" />
+    </div>
+</div>
+
+<div class="form-field">
+    <label>City:</label>
+    <div>
+        <dot:TextBox Text="{value: City}" 
+                     Validator.Value="{value: City}"
+                     Validator.InvalidCssClass="invalid" />
+        <dot:Validator Value="{value: City}"
+                       ShowErrorMessageText="true"
+                       InvalidCssClass="validation-message" />
+    </div>
+</div>
+
+<div class="form-field">
+    <label>Region:</label>
+    <div>
+        <dot:TextBox Text="{value: Region}" 
+                     Validator.Value="{value: Region}"
+                     Validator.InvalidCssClass="invalid" />
+        <dot:Validator Value="{value: Region}"
+                       ShowErrorMessageText="true"
+                       InvalidCssClass="validation-message" />
+    </div>
+</div>
+
+<div class="form-field">
+    <label>Postal code:</label>
+    <div>
+        <dot:TextBox Text="{value: PostalCode}" 
+                     Validator.Value="{value: PostalCode}"
+                     Validator.InvalidCssClass="invalid" />
+        <dot:Validator Value="{value: PostalCode}"
+                       ShowErrorMessageText="true"
+                       InvalidCssClass="validation-message" />
+    </div>
+</div>

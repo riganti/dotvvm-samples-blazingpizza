@@ -1,0 +1,40 @@
+﻿@viewModel BlazingPizza.App.ViewModels.MyOrdersViewModel, BlazingPizza.App
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <div class="main">
+        <dot:EmptyData DataSource="{value: Orders}">
+            <h2>No orders placed</h2>
+            <dot:RouteLink class="btn btn-success"
+                            RouteName="GetPizza"
+                            Text="Order some pizza" />
+        </dot:EmptyData>
+
+        <dot:Repeater DataSource="{value: Orders}"
+                        class="list-group orders-list">
+
+            <div class="list-group-item">
+                <div class="col">
+                    <h5>{{value: Order.CreatedTime.ToString("g")}}</h5>
+                    Items:
+                    <strong>{{value: Order.Pizzas.Count}}</strong>                        
+                    Total price:
+                    <strong>£{{value: Order.FormattedTotalPrice}}</strong>
+                </div>
+                <div class="col">
+                    Status: <strong>{{value: StatusText}}</strong>
+                </div>
+                <div class="col flex-grow-0">
+                    <dot:RouteLink RouteName="OrderDetails" Param-id="{value: Order.OrderId}"
+                                    class="btn btn-success">
+                        Track &gt;
+                    </dot:RouteLink>
+                </div>
+            </div>
+
+        </dot:Repeater>
+    </div>
+
+</dot:Content>
+

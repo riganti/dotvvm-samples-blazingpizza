@@ -1,0 +1,25 @@
+﻿@viewModel BlazingPizza.Order, BlazingPizza.Shared
+
+<dot:Repeater DataSource="{value: Pizzas}">
+    <p>
+        <strong>
+            {{value: Size}}"
+            {{value: Special.Name}}
+            (£{{value: FormattedTotalPrice}})
+        </strong>
+    </p>
+
+    <dot:Repeater DataSource="{value: Toppings}" WrapperTagName="ul">
+        <li>+ {{value: Topping.Name}}</li>
+    </dot:Repeater>
+</dot:Repeater>
+
+<p>
+    <strong>
+        Total price:
+        £{{value: FormattedTotalPrice}}
+    </strong>
+</p>
+
+
+
