@@ -9,7 +9,7 @@ It demonstrates:
 
 ## Running the sample app
 
-1. Clone the repository using command git clone `https://github.com/riganti/dotvvm-samples-blazingpizza.git`
+1. Clone the repository using command `git clone https://github.com/riganti/dotvvm-samples-blazingpizza.git`
 
 2. Open the solution (BlazingPizza.sln) in Visual Studio
 
