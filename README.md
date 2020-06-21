@@ -7,6 +7,18 @@ It demonstrates:
 * differences between the Razor/Blazor and DotVVM syntax.
 * usage of DotVVM with ASP.NET Core 3.0.
 
+## Running the sample app
+
+1. Clone the repository using command git clone `https://github.com/riganti/dotvvm-samples-blazingpizza.git`
+
+2. Open the solution (BlazingPizza.sln) in Visual Studio
+
+3. Set BlazingPizza.Server and BlazingPizza.Server as your startup projects
+
+![Multiple startups](/screenshots/multiple_startups.png?raw=true "Multiple startup project setup")
+
+4. Run BlazingPizza.Server and BlazingPizza.Server projects
+
 ## Differences between Razor and DotVVM syntax
 
 The syntax of DotVVM views is quite different from the Razor/Blazor approach because of the MVVM (Model-View-ViewModel) pattern.
