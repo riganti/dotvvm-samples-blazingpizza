@@ -13,11 +13,11 @@ It demonstrates:
 
 2. Open the solution (BlazingPizza.sln) in Visual Studio
 
-3. Set BlazingPizza.Server and BlazingPizza.Server as your startup projects
+3. Set `BlazingPizza.Server` and `BlazingPizza.Server` as your startup projects
 
 ![Multiple startups](/screenshots/multiple_startups.png?raw=true "Multiple startup project setup")
 
-4. Run BlazingPizza.Server and BlazingPizza.Server projects
+4. Run `BlazingPizza.Server` and `BlazingPizza.Server` projects
 
 ## Differences between Razor and DotVVM syntax
 
