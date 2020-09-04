@@ -169,11 +169,9 @@ DotVVM uses the same DataAnnotation attributes like Blazor and other .NET framew
 
 ## Other resources
 
-* [DotVVM.com](https://www.dotvvm.com)
-* [DotVVM GitHub](https://github.com/riganti/dotvvm)
-* [DotVVM Blog](https://www.dotvvm.com/blog)
-* [Documentation](https://www.dotvvm.com/docs)
-* [Twitter @dotvvm](https://twitter.com/dotvvm)
 * [Gitter Chat](https://gitter.im/riganti/dotvvm)
-* [Samples](https://github.com/search?q=topic%3Adotvvm-sample+org%3Ariganti&type=Repositories)
-* [Roadmap](https://github.com/riganti/dotvvm/blob/master/roadmap.md)
+* [DotVVM Official Website](https://www.dotvvm.com)
+* [DotVVM Documentation](https://www.dotvvm.com/docs)
+* [DotVVM GitHub](https://github.com/riganti/dotvvm)
+* [Twitter @dotvvm](https://twitter.com/dotvvm)
+* [Samples](https://www.dotvvm.com/samples)
