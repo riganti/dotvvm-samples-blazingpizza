@@ -2,12 +2,37 @@
 
 This sample is a rewrite of the popular [BlazingPizza sample](https://github.com/dotnet-presentations/blazor-workshop) into [DotVVM](https://github.com/riganti/dotvvm). 
 
-It demonstrates:
+![Screenshot](images/bp001.png)
 
-* differences between the Razor/Blazor and DotVVM syntax.
-* usage of DotVVM with ASP.NET Core 3.0.
+## Prerequisites
+* Make sure you have installed [DotVVM for Visual Studio](https://www.dotvvm.com/install)
 
-## Differences between Razor and DotVVM syntax
+## How to run the sample
+
+1. [Open the GitHub repo in Visual Studio](git-client://clone/?repo=https%3A%2F%2Fgithub.com%2Friganti%2Fdotvvm-samples-blazingpizza)
+or 
+`git clone https://github.com/riganti/dotvvm-samples-blazingpizza.git`
+
+2. Open `src/BlazingPizza/BlazingPizza.sln` 
+![Open the solution file](images/bp002.png)
+
+3. Right-click the `BlazingPizza.Server` project and select **View > View in Browser**
+![View BlazingPizza.Server in Browser](images/bp003.png)
+
+4. You will see HTTP 404, but it is OK – the `BlazingPizza.Server` project is a REST API without a home page – it only provides data to the app itself
+
+5. Right-click `BlazingPizza.App` project and select **View > View in Browser**
+![View BlazingPizza.App in Browser](images/bp004.png)
+
+## What you can learn in the sample
+
+* Differences between DotHTML and Razor syntax
+* How to design ViewModels and work with binding contexts
+* How to create a simple modal dialog
+
+---
+
+# Differences between Razor and DotVVM syntax
 
 The syntax of DotVVM views is quite different from the Razor/Blazor approach because of the MVVM (Model-View-ViewModel) pattern.
 
