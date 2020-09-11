@@ -2,7 +2,7 @@
 
 This sample is a rewrite of the popular [BlazingPizza sample](https://github.com/dotnet-presentations/blazor-workshop) into [DotVVM](https://github.com/riganti/dotvvm). 
 
-![Screenshot](images/bp001.png)
+![Screenshot](https://raw.githubusercontent.com/riganti/dotvvm-samples-blazingpizza/master/images/bp001.png)
 
 ## Prerequisites
 * Make sure you have installed [DotVVM for Visual Studio](https://www.dotvvm.com/install)
@@ -14,15 +14,15 @@ or
 `git clone https://github.com/riganti/dotvvm-samples-blazingpizza.git`
 
 2. Open `src/BlazingPizza/BlazingPizza.sln` 
-![Open the solution file](images/bp002.png)
+![Open the solution file](https://raw.githubusercontent.com/riganti/dotvvm-samples-blazingpizza/master/images/bp002.png)
 
 3. Right-click the `BlazingPizza.Server` project and select **View > View in Browser**
-![View BlazingPizza.Server in Browser](images/bp003.png)
+![View BlazingPizza.Server in Browser](https://raw.githubusercontent.com/riganti/dotvvm-samples-blazingpizza/master/images/bp003.png)
 
 4. You will see HTTP 404, but it is OK – the `BlazingPizza.Server` project is a REST API without a home page – it only provides data to the app itself
 
 5. Right-click `BlazingPizza.App` project and select **View > View in Browser**
-![View BlazingPizza.App in Browser](images/bp004.png)
+![View BlazingPizza.App in Browser](https://raw.githubusercontent.com/riganti/dotvvm-samples-blazingpizza/master/images/bp004.png)
 
 ## What you can learn in the sample
 
