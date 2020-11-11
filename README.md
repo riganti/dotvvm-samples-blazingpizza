@@ -1,13 +1,13 @@
-# Blazing Pizza in DotVVM
+![Screenshot](https://raw.githubusercontent.com/riganti/dotvvm-samples-blazingpizza/master/images/bp001.png)
+
+## Blazing Pizza in DotVVM
 
 This sample is a rewrite of the popular [BlazingPizza sample](https://github.com/dotnet-presentations/blazor-workshop) into [DotVVM](https://github.com/riganti/dotvvm). 
 
-![Screenshot](https://raw.githubusercontent.com/riganti/dotvvm-samples-blazingpizza/master/images/bp001.png)
-
-## Prerequisites
+### Prerequisites
 * Make sure you have installed [DotVVM for Visual Studio](https://www.dotvvm.com/install)
 
-## How to run the sample
+### How to run the sample
 
 1. [Open the GitHub repo in Visual Studio](git-client://clone/?repo=https%3A%2F%2Fgithub.com%2Friganti%2Fdotvvm-samples-blazingpizza)
 or 
@@ -24,7 +24,7 @@ or
 5. Right-click `BlazingPizza.App` project and select **View > View in Browser**
 ![View BlazingPizza.App in Browser](https://raw.githubusercontent.com/riganti/dotvvm-samples-blazingpizza/master/images/bp004.png)
 
-## What you can learn in the sample
+### What you can learn in the sample
 
 * Differences between DotHTML and Razor syntax
 * How to design ViewModels and work with binding contexts
@@ -40,14 +40,14 @@ DotVVM ships with many [built-in controls](https://dotvvm.com/docs/controls/buil
 
 Here is the list of the most frequent differences:
 
-### Outputting text in the page
+## Outputting text in the page
 
 Razor uses `@expression` to print values in the page.
 
 In DotVVM, you can use `{{value: expression}}` to do the same thing. In contrast to Razor, you can use only simple expressions without method calls - DotVVM translates these expressions in JavaScript. See the [supported expressions](https://www.dotvvm.com/docs/tutorials/basics-value-binding/latest) for value bindings.
 
 
-### `Visible` instead of `@if`
+## `Visible` instead of `@if`
 
 In DotVVM, you can use `Visible` property on any HTML element to hide it from the page. It is similar to `@if` expressions in Razor.
 
@@ -69,7 +69,7 @@ In DotVVM, you can use `Visible` property on any HTML element to hide it from th
 There is also `IncludedInPage` property that can be used instead of `Visible`. `Visible` only hides the element by setting `display: none` while `IncludedInPage` removes the element from DOM completely.
 
 
-### `<dot:Repeater>` instead of `@foreach`
+## `<dot:Repeater>` instead of `@foreach`
 
 Instead of using loops to iterate over a collection, DotVVM has the `<dot:Repeater>` control which can be data-bound to a collection in the viewmodel.
 
@@ -94,7 +94,7 @@ The `WrapperTagName` property specifies the name of the HTML element that should
 The `Repeater` also has the `EmptyDataTemplate` property that can be used to define content displayed when the collection is empty.
 
 
-### Navigation between pages
+## Navigation between pages
 
 We don't like to use plain hyperlinks to link to other DotVVM pages. 
 
@@ -119,7 +119,7 @@ The routes are registered in the `DotvvmStartup` file:
 config.RouteTable.Add("OrderDetails", "myorders/{id:int}", "Views/OrderDetails.dothtml");
 ```
 
-### Calling methods in the viewmodel
+## Calling methods in the viewmodel
 
 We use [command binding](https://www.dotvvm.com/docs/tutorials/basics-command-binding/latest) to call methods defined in the viewmodel. 
 
@@ -133,7 +133,7 @@ We use [command binding](https://www.dotvvm.com/docs/tutorials/basics-command-bi
             Click="{command: _root.RemoveTopping(_this)}">x</dot:Button>
 ```
 
-### Working with CSS classes
+## Working with CSS classes
 
 Instead of concatenating list of CSS classes on an element, you can use `class-something` binding to define conditions indicating whether the CSS class is applied or not.
 
@@ -149,7 +149,7 @@ Instead of concatenating list of CSS classes on an element, you can use `class-s
 </div>
 ```
 
-### Validation
+## Validation
 
 DotVVM uses the same DataAnnotation attributes like Blazor and other .NET frameworks. You can use `<dot:Validator>` or `<dot:ValidationSummary>` controls to display validation errors.
 
