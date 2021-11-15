@@ -329,3 +329,5 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 /src/BlazingPizza/BlazingPizza.Server/pizza.db
+/src/BlazingPizza/BlazingPizza.Server/pizza.db-wal
+/src/BlazingPizza/BlazingPizza.Server/pizza.db-shm
