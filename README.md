@@ -86,7 +86,7 @@ Instead of using loops to iterate over a collection, DotVVM has the `<dot:Repeat
 <dot:Repeater DataSource="{value: Toppings}"
               WrapperTagName="ul">
 	<li>+ {{value: Name}}</li>
-</ul>
+</dot:Repeater>
 ```
 
 The `WrapperTagName` property specifies the name of the HTML element that should wrap the individual items - `<ul>` in this case.
