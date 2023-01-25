@@ -63,8 +63,7 @@ namespace BlazingPizza.App.ViewModels
         public void Checkout()
         {
             orderStateService.SaveCurrentOrderState(Order);
-            Context.RedirectToRoute("Checkout");
+            Context.RedirectToRoute("checkout");
         }
     }
 }
-
