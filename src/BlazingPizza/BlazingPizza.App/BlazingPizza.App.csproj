@@ -39,7 +39,7 @@
       <None Include="wwwroot\img\user.svg" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="DotVVM.AspNetCore" Version="4.1.0-preview19-final" />
+        <PackageReference Include="DotVVM.AspNetCore" Version="4.1.0" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\BlazingPizza.Shared\BlazingPizza.Shared.csproj" />
