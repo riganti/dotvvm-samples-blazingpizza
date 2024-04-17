@@ -1,33 +1,18 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using DotVVM.Framework.ViewModel;
 
-namespace BlazingPizza.App.ViewModels
+namespace BlazingPizza.App.ViewModels;
+
+public class MyOrdersViewModel(IHttpClientFactory httpClientFactory) : MasterPageViewModel
 {
-    public class MyOrdersViewModel : MasterPageViewModel
-    {
-        private readonly HttpClient httpClient;
+    public List<OrderWithStatus> Orders { get; set; }
 
+    public override async Task PreRender()
+    { 
+        using var httpClient = httpClientFactory.CreateClient("Api");
+        Orders = await httpClient.GetJsonAsync<List<OrderWithStatus>>("orders");
 
-        public List<OrderWithStatus> Orders { get; set; }
-
-
-        public MyOrdersViewModel(HttpClient httpClient)
-        {
-            this.httpClient = httpClient;
-        }
-
-        public async override Task PreRender()
-        {
-            Orders = await httpClient.GetJsonAsync<List<OrderWithStatus>>("orders");
-
-            await base.PreRender();
-        }
-
+        await base.PreRender();
     }
 }
-

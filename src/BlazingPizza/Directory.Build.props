@@ -1,6 +1,9 @@
 <Project>
-    <PropertyGroup>
-        <AspNetCoreVersion>3.0.0-preview9.19424.4</AspNetCoreVersion>
-        <EntityFrameworkVersion>3.0.0-preview9.19423.6 </EntityFrameworkVersion>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+
+    <AspNetCoreVersion>8.0.0</AspNetCoreVersion>
+    <EntityFrameworkVersion>8.0.0</EntityFrameworkVersion>
+  </PropertyGroup>
 </Project>
