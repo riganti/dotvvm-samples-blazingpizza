@@ -10,6 +10,7 @@
     <PackageReference Include="DotVVM.AspNetCore" Version="4.2.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BlazingPizza.ServiceDefaults\BlazingPizza.ServiceDefaults.csproj" />
     <ProjectReference Include="..\BlazingPizza.Shared\BlazingPizza.Shared.csproj" />
   </ItemGroup>
 </Project>

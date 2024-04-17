@@ -17,7 +17,7 @@ builder.Services.AddDbContext<PizzaStoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DB"), options =>
     {
         options.EnableRetryOnFailure();
-});
+    });
 });
 builder.Services.AddResponseCompression(options =>
 {
@@ -39,10 +39,10 @@ app.MapControllers();
 
 // Run database migrations
 using var scope = app.Services.CreateScope();
-    var db = scope.ServiceProvider.GetRequiredService<PizzaStoreContext>();
-    if (db.Database.EnsureCreated())
-    {
-        SeedData.Initialize(db);
-    }
+var db = scope.ServiceProvider.GetRequiredService<PizzaStoreContext>();
+if (db.Database.EnsureCreated())
+{
+    SeedData.Initialize(db);
+}
 
 app.Run();
