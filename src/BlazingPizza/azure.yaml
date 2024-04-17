@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: BlazingPizza
+services:  
+  app:
+    language: dotnet
+    project: .\BlazingPizza.AppHost\BlazingPizza.AppHost.csproj
+    host: containerapp
