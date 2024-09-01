@@ -10,7 +10,7 @@
     <None Remove="dotvvm_serialized_config.json.tmp" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DotVVM.AspNetCore" Version="4.2.6" />
+    <PackageReference Include="DotVVM.AspNetCore" Version="4.2.8" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BlazingPizza.ServiceDefaults\BlazingPizza.ServiceDefaults.csproj" />

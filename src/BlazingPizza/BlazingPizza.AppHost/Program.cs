@@ -1,6 +1,7 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
 var db = builder.AddSqlServer("blazingpizza-db")
+    .WithDataVolume()
     .AddDatabase("DB", "BlazingPizza");
 
 var server = builder.AddProject<Projects.BlazingPizza_Server>("blazingpizza-server")
