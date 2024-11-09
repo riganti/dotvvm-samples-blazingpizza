@@ -20,4 +20,8 @@
     <ProjectReference Include="..\BlazingPizza.Server\BlazingPizza.Server.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
 </Project>
