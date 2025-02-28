@@ -1,9 +1,8 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var db = builder.AddSqlServer("blazingpizza-db")
-    .WithDataVolume()
-    .PublishAsAzureSqlDatabase()
-    .AddDatabase("DB", "BlazingPizza");
+var db = builder.AddAzureSqlServer("blazingpizza-db")
+	.RunAsContainer(c => c.WithDataVolume())
+	.AddDatabase("DB", "BlazingPizza");
 
 var server = builder.AddProject<Projects.BlazingPizza_Server>("blazingpizza-server")
     .WithReference(db);
